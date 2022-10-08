@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/samuraiWayJune2022/static/css/main.c7c0f1e6.css",
+    "main.js": "/samuraiWayJune2022/static/js/main.3ab1699c.js",
+    "static/js/787.28cb0dcd.chunk.js": "/samuraiWayJune2022/static/js/787.28cb0dcd.chunk.js",
+    "index.html": "/samuraiWayJune2022/index.html",
+    "main.c7c0f1e6.css.map": "/samuraiWayJune2022/static/css/main.c7c0f1e6.css.map",
+    "main.3ab1699c.js.map": "/samuraiWayJune2022/static/js/main.3ab1699c.js.map",
+    "787.28cb0dcd.chunk.js.map": "/samuraiWayJune2022/static/js/787.28cb0dcd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c7c0f1e6.css",
+    "static/js/main.3ab1699c.js"
+  ]
+}
