@@ -11,18 +11,5 @@
     grid-template-columns: 2fr 10fr;
     grid-gap: 10px;
 }
-.Header {
-grid-area: h;
-    background-color: green;
-}
-.Header img{
-    width: 20px;
-}
-.nav {
-    grid-area: n;
-    background-color: pink;
-}
-.content {
-    grid-area: c;
-    background-color: aqua;
-}
+
+
