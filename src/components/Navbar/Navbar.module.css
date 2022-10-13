@@ -1,7 +1,11 @@
 .nav {
     grid-area: n;
     background-color: pink;
+    padding: 20px;
 }
 .item {
     color: white;
+}
+.item a.active {
+    color:gold;
 }
