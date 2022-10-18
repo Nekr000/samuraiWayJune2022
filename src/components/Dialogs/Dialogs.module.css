@@ -14,6 +14,9 @@
 .dialog {
     color:red;
 }
+.dialog a.active {
+    color: red;
+}
 
 .messages {
     padding: 10px;
