@@ -4,7 +4,7 @@ import FrienOn from "./FriendsItem/FriendsItem";
 
 
 
-const Friends = (props:any) => {
+const FriendsOn = (props:any) => {
 
     let friendsElement = props.state.map((f:any) =><FrienOn name={f.name} img={f.img}/> )
     return <div className={s.item}>
@@ -12,4 +12,4 @@ const Friends = (props:any) => {
         {friendsElement}
     </div>
 }
-export default Friends
+export default FriendsOn

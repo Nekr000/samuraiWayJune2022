@@ -12,12 +12,17 @@ const Dialogs = (props:any) => {
     let dialogsElements = props.state.dialogs
         .map((d:any) => <DialogItem name={d.name} id={d.id}/>)
 
+
+
     return <div className={s.dialogs}>
+
         <div className={s.dialogsItems}>
             {dialogsElements}
         </div>
         <div className={s.messages}>
             {messagesElements}
+            <textarea ></textarea>
+            <button>add</button>
         </div>
     </div>
 }

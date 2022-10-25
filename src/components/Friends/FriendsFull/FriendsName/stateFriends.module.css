@@ -1,0 +1,16 @@
+.item img{
+    width: 50px;
+    height: 30px;
+    border-radius: 100px;
+    border: 3px solid green;
+    box-shadow: 0 0 7px #666;
+
+
+}
+.item {
+    color:white;
+
+}
+.item a.active {
+    color:gold;
+}
