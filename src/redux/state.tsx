@@ -1,4 +1,6 @@
 import React from 'react';
+import {reRender} from "../render";
+
 
 
 let state = {
@@ -8,7 +10,8 @@ let state = {
             {id: 2, message: 'my second post', likesCount: 11},
             {id: 3, message: 'Hello fantasy', likesCount: 0},
             {id: 4, message: 'TSX', likesCount: 2022},
-        ]
+        ],
+        newPostText: '',
     },
     dialogsPage: {
         dialogs: [
@@ -51,6 +54,22 @@ let state = {
 
     }
 
+}
+
+export let addPost = () => {
+    let newPost = {
+        id:5,
+        message: state.profilePage.newPostText,
+        likesCount: 0
+    }
+    state.profilePage.posts.push(newPost)
+    state.profilePage.newPostText = ''
+    reRender(state)
+}
+
+export let updateNewPostText = (newText:any) => {
+    state.profilePage.newPostText = newText
+    reRender(state)
 }
 
 export default state

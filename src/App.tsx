@@ -12,6 +12,9 @@ import FriendsOn from "./components/Friends/Friends";
 import FriendsFull from "./components/Friends/FriendsFull/FriendsFull";
 
 
+
+
+
 function App(props: any) {
 
     return (
@@ -24,7 +27,9 @@ function App(props: any) {
             <div className='app-wrapper-content'>
                 <Routes>
 
-                    <Route path='/profile' element={<Profile posts={props.state.profilePage}/>}/>
+                    <Route path='/profile' element={<Profile profilePage={props.state.profilePage}
+                                                             addPost={props.addPost}
+                                                             updateNewPostText={props.updateNewPostText}/>} />
                     <Route path="/dialogs/*" element={<Dialogs state={props.state.dialogsPage}/>}/>
                     <Route path='/news' element={<News/>}/>
                     <Route path='/music' element={<Music/>}/>
