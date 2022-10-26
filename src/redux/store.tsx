@@ -1,5 +1,12 @@
 import React from 'react';
 
+const ADD_POST = 'ADD-POST';
+const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+
+const ADD_MESSAGE = 'ADD-MESSAGE';
+const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT';
+
+
 
 let store = {
     _state: {
@@ -25,7 +32,8 @@ let store = {
                 {id: 2, message: 'Yo'},
                 {id: 3, message: 'Hello'},
                 {id: 3, message: 'number 27'},
-            ]
+            ],
+            newMessageText: '',
         },
         sideBar: {
             stateFriends: [
@@ -74,11 +82,47 @@ let store = {
             this._state.profilePage.posts.push(newPost)
             this._state.profilePage.newPostText = ''
             this.reRender()
-        } else if(action.type === 'UPDATE-NEW-POST-TEXT') {
+        } if(action.type === 'UPDATE-NEW-POST-TEXT') {
             this._state.profilePage.newPostText = action.newText
+            this.reRender()
+        }if (action.type === 'ADD-MESSAGE') {
+            let newMessage = {
+                id: 4,
+                message: this._state.dialogsPage.newMessageText,
+            }
+            this._state.dialogsPage.messages.push(newMessage)
+            this._state.dialogsPage.newMessageText = ''
+            this.reRender()
+        }else if (action.type === 'UPDATE-NEW-MESSAGE-TEXT') {
+            this._state.dialogsPage.newMessageText = action.newText
             this.reRender()
         }
 
+    }
+}
+export const addPostActionCreator = () => {
+
+    return {
+        type: ADD_POST
+    }
+}
+export const updateNewPostTextChangeActionCreator = (text:any) => {
+    return {
+        type: UPDATE_NEW_POST_TEXT,
+        newText: text,
+    }
+}
+export const addMessageActionCreator = () => {
+
+    return {
+        type: ADD_MESSAGE
+    }
+}
+export const updateNewMessageTextActionCreator = (text:any) => {
+
+    return {
+        type: UPDATE_NEW_MESSAGE_TEXT,
+        newText: text
     }
 }
 
