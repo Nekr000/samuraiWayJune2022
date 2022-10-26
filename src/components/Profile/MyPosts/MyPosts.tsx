@@ -15,13 +15,13 @@ const MyPosts = (props: any) => {
     let addPost = () => {
 
 
-        let text = newPost?.current?.value;
-        props.addPost(text)
+        // let text = newPost?.current?.value;
+        props.dispatch({type:'ADD-POST'})
 
     }
     let onPostChange = () => {
-        let text = newPost?.current?.value
-        props.updateNewPostText(text)
+        // let text = newPost?.current?.value
+        props.dispatch({type: 'UPDATE-NEW-POST-TEXT', newText: newPost?.current?.value})
     }
 
 
