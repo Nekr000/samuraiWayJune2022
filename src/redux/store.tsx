@@ -1,11 +1,13 @@
 import React from 'react';
+import profileReducer from "./profile-reducer";
+import dialogsReducer from "./dialogs-reducer.tsx";
+import sidebarReducer from "./sidebar-reducer";
 
 const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 
 const ADD_MESSAGE = 'ADD-MESSAGE';
 const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT';
-
 
 
 let store = {
@@ -70,64 +72,45 @@ let store = {
     },
     subscribe(observer: any) {
         this.reRender = observer
-},
+    },
 
-    dispatch(action:any){
-        if(action.type === 'ADD-POST') {
-            let newPost = {
-                id: 5,
-                message: this._state.profilePage.newPostText,
-                likesCount: 0
-            }
-            this._state.profilePage.posts.unshift(newPost)
-            this._state.profilePage.newPostText = ''
-            this.reRender()
-        } if(action.type === 'UPDATE-NEW-POST-TEXT') {
-            this._state.profilePage.newPostText = action.newText
-            this.reRender()
-        }if (action.type === 'ADD-MESSAGE') {
-            let newMessage = {
-                id: 4,
-                message: this._state.dialogsPage.newMessageText,
-            }
-            this._state.dialogsPage.messages.push(newMessage)
-            this._state.dialogsPage.newMessageText = ''
-            this.reRender()
-        }else if (action.type === 'UPDATE-NEW-MESSAGE-TEXT') {
-            this._state.dialogsPage.newMessageText = action.newText
-            this.reRender()
+    dispatch(action: any) {
+
+        this._state.profilePage =  profileReducer(this._state.profilePage, action)
+        this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action)
+        this._state.sideBar  = sidebarReducer(this._state.sideBar, action)
+        this.reRender()
+
+        // if(action.type === 'ADD-POST') {
+        //     let newPost = {
+        //         id: 5,
+        //         message: this._state.profilePage.newPostText,
+        //         likesCount: 0
+        //     }
+        //     this._state.profilePage.posts.unshift(newPost)
+        //     this._state.profilePage.newPostText = ''
+        //         this.reRender()
+        //     } if(action.type === 'UPDATE-NEW-POST-TEXT') {
+        //         this._state.profilePage.newPostText = action.newText
+        //         this.reRender()
+        //     }if (action.type === 'ADD-MESSAGE') {
+        //         let newMessage = {
+        //             id: 4,
+        //             message: this._state.dialogsPage.newMessageText,
+        //         }
+        //         this._state.dialogsPage.messages.push(newMessage)
+        //         this._state.dialogsPage.newMessageText = ''
+        //         this.reRender()
+        //     }else if (action.type === 'UPDATE-NEW-MESSAGE-TEXT') {
+        //         this._state.dialogsPage.newMessageText = action.newText
+        //         this.reRender()
+        //     }
+        //
         }
-
     }
-}
-export const addPostActionCreator = () => {
-
-    return {
-        type: ADD_POST
-    }
-}
-export const updateNewPostTextChangeActionCreator = (text:any) => {
-    return {
-        type: UPDATE_NEW_POST_TEXT,
-        newText: text,
-    }
-}
-export const addMessageActionCreator = () => {
-
-    return {
-        type: ADD_MESSAGE
-    }
-}
-export const updateNewMessageTextActionCreator = (text:any) => {
-
-    return {
-        type: UPDATE_NEW_MESSAGE_TEXT,
-        newText: text
-    }
-}
 
 
 
-export default store
+    export default store
 // @ts-ignore
-window.store = store
+    window.store = store
