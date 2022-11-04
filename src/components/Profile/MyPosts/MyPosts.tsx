@@ -4,7 +4,6 @@ import Post from "./MyPost/Post";
 import {addPostActionCreator, updateNewPostTextChangeActionCreator} from "../../../redux/store";
 
 
-
 const MyPosts = (props: any) => {
 
 
@@ -31,7 +30,8 @@ const MyPosts = (props: any) => {
             <h3>My posts</h3>
             <div>
                 <div>
-                    <textarea ref={newPost}
+                    <textarea placeholder='Enter your post'
+                              ref={newPost}
                               value={props.newPostText}
                               onChange={onPostChange}/>
                 </div>

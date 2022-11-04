@@ -79,7 +79,7 @@ let store = {
                 message: this._state.profilePage.newPostText,
                 likesCount: 0
             }
-            this._state.profilePage.posts.push(newPost)
+            this._state.profilePage.posts.unshift(newPost)
             this._state.profilePage.newPostText = ''
             this.reRender()
         } if(action.type === 'UPDATE-NEW-POST-TEXT') {
