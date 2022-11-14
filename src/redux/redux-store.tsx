@@ -10,7 +10,6 @@ let reducers = combineReducers({
 })
 
 
-// @ts-ignore for study
 let store = createStore(reducers);
 
 

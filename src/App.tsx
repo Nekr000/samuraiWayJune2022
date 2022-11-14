@@ -11,6 +11,9 @@ import Settings from "./components/Settings/Settings";
 import FriendsOn from "./components/Friends/Friends";
 import FriendsFull from "./components/Friends/FriendsFull/FriendsFull";
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
+import SuperDialogsContainter from "./components/Dialogs/DialogsContainer";
+import FriendsOnCOntainer from "./components/Friends/FriendsContainer";
+import FriendsFullContainer from "./components/Friends/FriendsFull/FriendsFullContainer";
 
 
 function App(props: any) {
@@ -20,7 +23,7 @@ function App(props: any) {
         <div className='app-wrapper'>
             <Header/>
             <Navbar/>
-            <FriendsOn />
+            <FriendsOnCOntainer />
 
             <div className='app-wrapper-content'>
                 <Routes>
@@ -30,7 +33,7 @@ function App(props: any) {
                     <Route path='/news' element={<News/>}/>
                     <Route path='/music' element={<Music/>}/>
                     <Route path='/settings' element={<Settings/>}/>
-                    <Route path='/friendsFull' element={<FriendsFull />}/>
+                    <Route path='/friendsFull' element={<FriendsFullContainer />}/>
                 </Routes>
             </div>
         </div>
